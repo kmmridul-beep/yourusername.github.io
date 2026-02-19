@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Space</title>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #333;
+            --accent: #0070f3;
+        }
+        body { font-family: -apple-system, sans-serif; line-height: 1.6; margin: 0; color: var(--text); background: var(--bg); }
+        header { padding: 2rem; text-align: center; border-bottom: 1px solid #eee; }
+        nav { margin-top: 1rem; }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--accent); font-weight: bold; }
+        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .post { margin-bottom: 3rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
+        .post img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; }
+        .post h2 { margin-bottom: 0.5rem; }
+        .date { color: #888; font-size: 0.9rem; }
+        footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #888; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to My World</h1>
+    <nav>
+        <a href="#blog">Writeups</a>
+        <a href="#gallery">Photos</a>
+    </nav>
+</header>
+
+<div class="container" id="blog">
+    <article class="post">
+        <h2>Reflections on Minimalism</h2>
+        <p class="date">Published: February 20, 2026</p>
+        <p>This is where you can share your thoughts. Since this is a static site, you'll simply add new "article" blocks here for every new post you write.</p>
+    </article>
+
+    <article class="post" id="gallery">
+        <h2>Sunset at the Coast</h2>
+        <p class="date">Captured: February 2026</p>
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Ocean Sunset">
+        <p>A quick snap from my recent trip. You can replace the image link with your own file names.</p>
+    </article>
+</div>
+
+<footer>
+    <p>&copy; 2026 [Your Name]. Built with caffeine and code.</p>
+</footer>
+
+</body>
+</html>
