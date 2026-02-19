@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Space</title>
+    <title>মৃদুলের আনন্দ আয়োজন</title>
     <style>
-        :root {
-            --bg: #ffffff;
-            --text: #333;
-            --accent: #0070f3;
-        }
+        :root { --bg: #ffffff; --text: #333; --accent: #0070f3; }
         body { font-family: -apple-system, sans-serif; line-height: 1.6; margin: 0; color: var(--text); background: var(--bg); }
-        header { padding: 2rem; text-align: center; border-bottom: 1px solid #eee; }
-        nav { margin-top: 1rem; }
-        nav a { margin: 0 15px; text-decoration: none; color: var(--accent); font-weight: bold; }
-        .container { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
-        .post { margin-bottom: 3rem; border-bottom: 1px solid #eee; padding-bottom: 1rem; }
-        .post img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; }
-        .post h2 { margin-bottom: 0.5rem; }
-        .date { color: #888; font-size: 0.9rem; }
-        footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #888; }
+        
+        /* মেনু স্টাইল */
+        header { padding: 1.5rem; text-align: center; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
+        nav a { margin: 0 10px; text-decoration: none; color: var(--accent); font-weight: bold; cursor: pointer; }
+        
+        .container { max-width: 700px; margin: auto; padding: 2rem 1rem; }
+
+        /* সব সেকশন শুরুতে লুকানো থাকবে */
+        .content-section { display: none; }
+
+        /* শুধু হোম সেকশন শুরুতে দেখাবে */
+        #home { display: block; text-align: center; }
+        #home img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid #eee; margin-bottom: 1rem; }
+
+        /* কবিতার স্টাইল */
+        .post { margin-top: 2rem; padding: 1rem; border-bottom: 1px solid #eee; }
+        .poem-body { white-space: pre-wrap; line-height: 1.8; font-size: 1.1rem; color: #444; margin: 1.5rem 0; }
+
+        footer { text-align: center; padding: 3rem 1rem; font-size: 0.8rem; color: #888; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>মৃদুলের আনন্দ আয়োজনে স্বাগত</h1>
+    <h1>মৃদুলের আনন্দ আয়োজন</h1>
     <nav>
-        <a href="#blog">লেখালেখি</a>
-        <a href="#gallery">ছবি</a>
+        <a onclick="showSection('home')">হোম</a>
+        <a onclick="showSection('blog')">লেখালেখি</a>
+        <a onclick="showSection('gallery')">ছবি</a>
     </nav>
 </header>
 
-<div class="container" id="blog">
-    <div style="white-space: pre-wrap; line-height: 1.8; font-size: 1.1rem; font-family: 'Siyam Rupali', 'SolaimanLipi', sans-serif; color: #333;">
-বাবার চশমা ভেঙে গেছে গেলো সপ্তায়
+<div class="container">
+    
+    <section id="home" class="content-section">
+        <img src="my-photo.jpg" alt="খান মোহাম্মাদ মৃদুল">
+        <h2>স্বাগতম!</h2>
+        <p>আমি খান মোহাম্মাদ মৃদুল। এটি আমার ব্যক্তিগত সংগ্রহশালা। উপরের মেনু থেকে আমার লেখালেখি বা ছবিগুলো দেখতে পারেন।</p>
+    </section>
+
+    <section id="blog" class="content-section">
+        <div class="post">
+            <h2>বৃত্তাবর্তন</h2>
+            <p style="color: #888;">২০ ফেব্রুয়ারি, ২০২৬ | নরসিংদী</p>
+            <div class="poem-body">বাবার চশমা ভেঙে গেছে গেলো সপ্তায়
 নুয়ে পড়া, ক্ষীণকায় শরীর বাবার
 ঠিক করে নেবে, সে পয়সা নেই
 বেকার ছেলে আমি-
@@ -58,23 +75,36 @@
 আমার ময়লা পাঞ্জাবির বাম পকেটে
 দুইশ টাকার দুটো নোট ঢুকিয়ে দিয়ে
 বাবা তাকালেন, বললেন-
-কিছু লাগলে কিনে নিস
-    </div>
-    <p style="margin-top: 25px; font-weight: bold; color: #555;">— খান মোহাম্মাদ মৃদুল</p>
-    
-    <blockquote style="margin-top: 20px; font-style: italic; color: #888; border-left: 2px solid #ccc; padding-left: 10px;">
-        (আব্বা নাই ২৮ বছর হলো। বাবারা কেমন হয় সে ব্যাপারে আমার শুধু কেতাবি অভিজ্ঞতা আছে। তাই আবেগ যথার্থ হলো কিনা জানি না। ইচ্ছা হলো, তাই লিখলাম। বাবারা যেখানে থাক, যত্নে থাক)
-   
+কিছু লাগলে কিনে নিস</div>
+            <p>— খান মোহাম্মাদ মৃদুল</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="content-section">
+        <h2 style="text-align: center;">আমার স্মৃতিগুলো</h2>
+        <p style="text-align: center; color: #888;">এখানে আপনার ছবিগুলো এক এক করে যোগ করতে পারবেন।</p>
+        <img src="your-image-1.jpg" style="width: 100%; border-radius: 8px; margin-top: 10px;">
+    </section>
+
+</div>
+
 <footer>
-    <p>&copy; 2026 [খান মোহাম্মাদ মৃদুল খান].</p>
+    <p>&copy; 2026 খান মোহাম্মাদ মৃদুল</p>
 </footer>
 
+<script>
+    function showSection(sectionId) {
+        // সব সেকশন আগে হাইড করো
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.style.display = 'none');
+        
+        // শুধু নির্দিষ্ট সেকশনটি দেখাও
+        document.getElementById(sectionId).style.display = 'block';
+        
+        // স্ক্রল করে উপরে নিয়ে যাও
+        window.scrollTo(0, 0);
+    }
+</script>
 
-
-
-
-
-
-
-
-
+</body>
+</html>
